@@ -202,10 +202,34 @@ jobs:
           name: mingw_x64
           path: lexbor/install/lib/liblexbor_static.a
 
+  build-android-arm64:
+    name: Build Android arm64
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Build Lexbor
+        run: |
+          cd lexbor
+          mkdir build && mkdir install
+          cd build
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/android-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          make
+          make install
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: android_arm64
+          path: lexbor/install/lib/liblexbor_static.a
+
   create-release:
     name: Create Release
     runs-on: ubuntu-latest
-    needs: [ build-windows-x64, build-linux-arm64, build-linux-x64, build-ios-x64, build-ios-simulator-arm64, build-ios-arm64, build-macos-x64, build-macos-arm64 ]
+    needs: [ build-windows-x64, build-linux-arm64, build-linux-x64, build-ios-x64, build-ios-simulator-arm64, build-ios-arm64, build-macos-x64, build-macos-arm64, build-android-arm64 ]
     permissions:
       contents: write
     steps:
@@ -220,6 +244,7 @@ jobs:
           zip -r ios_simulator_arm64.zip ios_simulator_arm64
           zip -r macos_x64.zip macos_x64
           zip -r macos_arm64.zip macos_arm64
+          zip -r android_arm64.zip android_arm64
       - name: Upload Artifacts to Release
         uses: softprops/action-gh-release@v2
         with:
@@ -232,3 +257,4 @@ jobs:
             ios_simulator_arm64.zip
             macos_x64.zip
             macos_arm64.zip
+            android_arm64.zip

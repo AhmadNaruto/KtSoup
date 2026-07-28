@@ -44,6 +44,7 @@ kotlin {
             if (!currentOs.isLinux) mingwX64() else null,
             if (!currentOs.isWindows) linuxX64() else null,
             if (!currentOs.isWindows) linuxArm64() else null,
+            if (!currentOs.isWindows) androidNativeArm64() else null,
             if (currentOs.isMacOsX) macosX64() else null,
             if (currentOs.isMacOsX) macosArm64() else null,
             if (currentOs.isMacOsX) iosSimulatorArm64() else null,
@@ -89,6 +90,7 @@ kotlin {
 
                     KonanTarget.LINUX_ARM64,
                     KonanTarget.LINUX_X64 -> if (!currentOs.isWindows) applyExtraOpts()
+                    KonanTarget.ANDROID_ARM64 -> if (!currentOs.isWindows) applyExtraOpts()
 
                     KonanTarget.MINGW_X64 -> if (currentOs.isWindows) applyExtraOpts()
                     else -> Unit
