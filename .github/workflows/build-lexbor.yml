@@ -20,7 +20,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/macos-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/macos-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -44,7 +44,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/macos-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/macos-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -68,7 +68,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -92,7 +92,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-simulator-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-simulator-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -116,7 +116,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/ios-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -140,7 +140,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -166,7 +166,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/linux-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/linux-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -192,7 +192,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/windows-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/windows-x64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
@@ -216,7 +216,7 @@ jobs:
           cd lexbor
           mkdir build && mkdir install
           cd build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/android-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../cmake-files/android-arm64.cmake -DCMAKE_INSTALL_PREFIX=../install -DLEXBOR_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=MinSizeRel
           make
           make install
 
